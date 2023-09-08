@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vowel & Reverse</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var str = prompt("Enter the input", "");
+    
+    if (str !== null && str !== "") { // Check if the input is not empty
+        
+        if (!isNaN(str)) {
+            // Input is a number
+            var num = parseInt(str);
+            var rev = 0;
+            var remainder;
+
+            while (num !== 0) {
+                remainder = num % 10;
+                num = parseInt(num / 10);
+                rev = rev * 10 + remainder;
+            }
+
+            alert("Reverse of " + str + " is " + rev);
+        } else {
+            // Input is not a number
+            str = str.toUpperCase();
+            var i;
+
+            for (i = 0; i < str.length; i++) {
+                var ch = str.charAt(i);
+                if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+                    alert("The position of the leftmost vowel is " + (i + 1));
+                    break;
+                }
+            }
+
+            if (i === str.length) {
+                alert("No vowel found in the entered string");
+            }
+        }
+    } else {
+        // Handle empty input
+        alert("No input provided.");
+    }
+</script>
+
+</body>
+</html>
