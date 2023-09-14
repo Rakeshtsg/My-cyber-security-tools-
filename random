@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JavaScript Match Words Starts or Ends with a Pattern Using Regular Expression</title>
+</head>
+<body>
+ <script>
+ var regex = /(\bcar\w*)/g;
+ var str = "Words begining with car: cart, carrot, cartoon. Words ending with car: oscar,supercar.";
+ var replacement = '<b>$1</b>';
+
+ // Highlights the words beginning with car in bold
+ var result = str.replace(regex, replacement);
+ document.write(result);
+ </script>
+</body>
+</html>
